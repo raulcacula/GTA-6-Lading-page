@@ -1,0 +1,324 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    background: black;
+    overflow-x: hidden !important;
+}
+header{
+    display: flex;
+    padding: 22px;
+    color: white;
+    width: 100%;
+    justify-content: space-around;
+    background: linear-gradient(rgba(0, 0, 0, 0.92),rgba(135, 117, 235, 0.0))
+}
+ul{
+    list-style: none;
+}
+.items-container{
+    display: flex;
+    align-items: center;
+}
+.items-container a{
+    text-decoration: none;
+    color: white;
+    font-family: 'poppins';
+    text-transform: uppercase;
+    position: relative;
+}
+.items-container a::after{
+    content: " ";
+    position: absolute;
+    background: #8876ea;
+    width: 0%;
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    transition: .3s ease-in-out;
+}
+.items-container a:hover::after{
+    width: 100%;
+}
+.logo-nav img{
+    cursor: pointer;
+    width: 70px;
+    height: 100%;
+}
+.gta-trailer{
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+}
+.gta-trailer video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.gta-trailer::after{
+    content: ' ';
+    width: inherit;
+    height: inherit;
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+}
+.bar-container{
+    width: 50px;
+    height: 110vh;
+    background: linear-gradient(#00000080,#8876ea80) ;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.bars-icon{
+    text-align: center;
+    padding-top: 50px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+.sociais{
+    text-align: center;
+    padding-top: 50px;
+    color: white;
+}
+.sociais a{
+    font-size: 20px;
+    color: white;
+}
+.bar-container-item{
+    display: none;
+    z-index: -1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    background: black;
+    width: 100%;
+    height: 100%;
+    margin-top: -120px;
+    animation: itemShow .5s ease-in-out;
+}
+@keyframes itemShow{
+    0%{
+        opacity: 0;
+        border-radius: 100%;
+        transform:translateY(100px);
+    }
+    100%{
+        border-radius: 0%;
+        opacity: 1;
+        transform:translateY(0px);
+    }
+}
+.bar-links{
+    align-items: center;
+    text-align: left;
+    padding-top: 6rem;
+    padding-left: 5rem;
+    line-height: 5;
+}
+.bar-links a{
+    color: white;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'poppins';
+    position: relative;
+}
+.bar-links a::after{
+    content: " ";
+    position: absolute;
+    background: #8876ea;
+    width: 0%;
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    transition: .3s ease-in-out;
+}
+.bar-links a:hover::after{
+    width: 100%;
+}
+.bar-links a:nth-child(1){
+    background: #8876ea;
+    padding: 0rem 08rem;
+    width: 200px;
+}
+.page-items{
+    z-index: 1;
+    max-width: 900px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+.page-items > .conteudo-container{
+    flex:1 1 1 1 200px;
+    margin: 10px;
+}
+.conteudo-container{
+
+    display: flex;
+    justify-content: center;
+}
+.gta-titulo{
+    width: 400px;
+    gap: normal;
+}
+.gta-titulo h1{
+    font-family:'poppins';
+    font-size: 6rem;
+    letter-spacing: 5px;
+    color: #8876ea;
+}
+.gta-titulo p{
+    font-family: 'poppins';
+    font-size: 15px;
+    margin-top: 10px;
+}
+#spanH1{
+    color: #47b7e9;
+    font-family: 'Merriweather', serif;
+    font-size: 6rem;
+}
+#spanG{
+    font-family: 'Merriweather', serif;
+    font-size: 6rem;
+}
+.gta-titulo span{
+    font-size: 20px;
+    font-family: 'poppins';
+}
+.conteudo-container .gta-img{
+    width: 600px;
+}
+.conteudo-container img{
+    width: 100%;
+}
+
+@media(min-width:953px) and (max-width:1100px){
+    .conteudo-container .gta-img{
+        width: 500px;
+    }
+    .conteudo-container img{
+        width: 100%;
+        margin-left: -50px;
+    }
+    .card-box{
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media(min-width:200px) and (max-width:953px){
+    .bar-links a{
+        font-size: 23px;
+    }
+    .bar-links{
+        padding-left: 2rem;
+    }
+    .conteudo-container .gta-img{
+        width: 500px;
+        margin-left: -150px;
+    }
+    .gta-titulo{
+        margin-left: 0px;
+    }
+    .conteudo-container img{
+        width: 100%;
+    }
+    .gta-titulo h1 , #spanG, #spanH1{
+        font-size: 4rem;
+    }
+    .gta-titulo p{
+        font-size: 100%;
+    }
+}
+@media(min-width:200px) and (max-width:832px){
+    .conteudo-container .gta-img{
+        width: 500px;
+        margin-left: -80px;
+    }
+    .conteudo-container img{
+        width: 100%;
+    }
+    .page-items{
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin-left: -50px;
+    }
+    .conteudo-container{
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .gta-titulo h1 , #spanG, #spanH1{
+        font-size: 6rem;
+    }
+    .gta-titulo p{
+        font-size: 100%;
+    }
+    .bar-container{
+        width: 50px;
+        height: 160vh;
+        background: linear-gradient(#00000080,#8876ea80) ;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .card{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.card{
+    line-height: 4;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.card-box{
+    position: relative;
+    margin-bottom: 40px;
+}
+.card-box img{
+    width: 110px;
+    height: 120px;
+    border-radius: 8px;
+    transition: .5s;
+    position: relative;
+    margin-top: 20px;
+}
+.card-box img:hover{
+    opacity: 0.8;
+    border: 1px solid #8876ea;
+}
+.gta-titulo span:nth-child(2){
+    color:gainsboro;
+} 
+.card-box::after{
+    content: " ";
+    position: absolute;
+    background: white;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 4px;
+}
